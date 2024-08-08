@@ -1,9 +1,9 @@
 package lib
 
 import (
+	export "github.com/redhat-best-practices-for-k8s/graphsolver-exports"
+	l2lib "github.com/redhat-best-practices-for-k8s/l2discovery-exports"
 	"github.com/sirupsen/logrus"
-	export "github.com/test-network-function/graphsolver-exports"
-	l2lib "github.com/test-network-function/l2discovery-exports"
 )
 
 var GlobalConfig = configObject{}
