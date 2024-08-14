@@ -5,8 +5,8 @@ github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZb
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/redhat-best-practices-for-k8s/graphsolver-exports v0.0.2 h1:SJnXD40jEFBCWT8ZjmJOFJdIzMwWPbrIUCAQu1oXfYQ=
 github.com/redhat-best-practices-for-k8s/graphsolver-exports v0.0.2/go.mod h1:Vl268nAHQKEnIw7GIYehp3Lx4qYP8+rOlwGsWxD/aO4=
-github.com/redhat-best-practices-for-k8s/l2discovery-exports v0.0.4 h1:66qE0Vj/8vWvt8yaVq1yJK5+OOELGZdlCwzHkXRxFr4=
-github.com/redhat-best-practices-for-k8s/l2discovery-exports v0.0.4/go.mod h1:NO9mpaj5neVKarRGcsL5SHVFb+uYUoCC8uVbuT419xs=
+github.com/redhat-best-practices-for-k8s/l2discovery-exports v0.0.5 h1:0X6pIv4tMsSquGS4m+xgmzFGIm16Snj2ErmnpoYqLog=
+github.com/redhat-best-practices-for-k8s/l2discovery-exports v0.0.5/go.mod h1:NO9mpaj5neVKarRGcsL5SHVFb+uYUoCC8uVbuT419xs=
 github.com/sirupsen/logrus v1.9.3 h1:dueUQJ1C2q9oE3F7wvmSGAaVtTmUizReu6fjN8uqzbQ=
 github.com/sirupsen/logrus v1.9.3/go.mod h1:naHLuLoDiP4jHNo9R0sCBMtWGeIprob74mVsIT4qYEQ=
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=

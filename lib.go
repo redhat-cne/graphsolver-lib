@@ -1,6 +1,8 @@
 package lib
 
 import (
+	"strings"
+
 	export "github.com/redhat-best-practices-for-k8s/graphsolver-exports"
 	l2lib "github.com/redhat-best-practices-for-k8s/l2discovery-exports"
 	"github.com/sirupsen/logrus"
@@ -91,6 +93,7 @@ type AlgoFunction1 int
 const (
 	// same node
 	StepIsPTP AlgoFunction1 = iota
+	StepIsWPCNic
 )
 
 // list of Algorithm function with 2 params
@@ -104,6 +107,8 @@ const (
 	StepDifferentNode
 	StepDifferentNic
 )
+
+const WPCNICSubsystemID = "E810-XXV-4T"
 
 // list of Algorithm function with 3 params
 type AlgoFunction3 int
@@ -281,6 +286,16 @@ func SameNicWrapper(config export.L2Info, if1, if2 int) bool {
 	return SameNic(config.GetPtpIfList()[if1], config.GetPtpIfList()[if2])
 }
 
+// Determines if the NIC is intel WPC NIC
+func isWpcNic(ifaceName1 *l2lib.PtpIf) bool {
+	return strings.Contains(ifaceName1.IfPci.Subsystem, WPCNICSubsystemID)
+}
+
+// wrapper for isWpcNic
+func isWPCNicWrapper(config export.L2Info, if1 int) bool {
+	return isWpcNic(config.GetPtpIfList()[if1])
+}
+
 // wrapper for nil algo function
 func NilWrapper() bool {
 	return true
@@ -304,8 +319,9 @@ func applyStep(config export.L2Info, step [][]int, combinations []int) bool {
 	var AlgoCode0 [1]ConfigFunc0
 	AlgoCode0[StepNil] = NilWrapper
 
-	var AlgoCode1 [1]ConfigFunc1
+	var AlgoCode1 [2]ConfigFunc1
 	AlgoCode1[StepIsPTP] = IsPTPWrapper
+	AlgoCode1[StepIsWPCNic] = isWPCNicWrapper
 
 	var AlgoCode2 [5]ConfigFunc2
 	AlgoCode2[StepSameLan2] = SameLan2Wrapper
@@ -316,7 +332,6 @@ func applyStep(config export.L2Info, step [][]int, combinations []int) bool {
 
 	var AlgoCode3 [1]ConfigFunc3
 	AlgoCode3[StepSameLan3] = SameLan3Wrapper
-
 	result := true
 	for _, test := range step {
 		switch test[1] {
