@@ -3,8 +3,8 @@ package lib
 import (
 	"strings"
 
-	export "github.com/redhat-best-practices-for-k8s/graphsolver-exports"
-	l2lib "github.com/redhat-best-practices-for-k8s/l2discovery-exports"
+	export "github.com/redhat-cne/graphsolver-exports"
+	l2lib "github.com/redhat-cne/l2discovery-exports"
 	"github.com/sirupsen/logrus"
 )
 

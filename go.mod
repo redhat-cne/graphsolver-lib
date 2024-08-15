@@ -1,12 +1,10 @@
-module github.com/redhat-best-practices-for-k8s/graphsolver-lib
+module github.com/redhat-cne/graphsolver-lib
 
-go 1.22.5
-
-toolchain go1.22.6
+go 1.22
 
 require (
-	github.com/redhat-best-practices-for-k8s/graphsolver-exports v0.0.2
-	github.com/redhat-best-practices-for-k8s/l2discovery-exports v0.0.5
+	github.com/redhat-cne/graphsolver-exports v0.0.2
+	github.com/redhat-cne/l2discovery-exports v0.0.4
 	github.com/sirupsen/logrus v1.9.3
 )
 
